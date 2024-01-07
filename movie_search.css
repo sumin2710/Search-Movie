@@ -1,0 +1,131 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+    color: whitesmoke;
+}
+
+body {
+    margin : 20px;
+	border: 2px solid transparent;
+    border-color: rgba(48, 235, 229, 0.46);
+    border-radius: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+}
+header > h1 {
+    color: whitesmoke;
+    text-shadow: 3px 3px 5px aqua;
+    margin-bottom: 5px;
+}
+header > span {
+    font-size: 32px;
+    margin: 0 8px 5px 8px;
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    top: 100px;
+}
+
+.search-container>input {
+    margin-right: 20px;
+    height:50px;
+    margin-top: 13px;
+}
+
+#movie-container {
+    display: flex;
+    justify-content: space-evenly center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: black;
+    padding: 25px;
+    max-width: 250px;
+    border-radius: 15px;
+    display: grid;
+    place-items: center;
+    box-shadow: 1px 1px 20px -1px aqua;
+    margin: 50px;
+
+}
+
+.img {
+    width: 90%;
+    max-width: 400px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.title {
+    margin: 20px auto;
+    text-align: center;
+    font-size: 1.2rem;
+    text-shadow: 3px 3px 5px aqua;
+}
+
+.voteAvg {
+    margin-top: 15px;
+    font-size: 0.8rem;
+    text-shadow: 3px 3px 5px aqua;
+}
+
+.form-control:focus {
+    border-color: aqua;
+    box-shadow: 0 0 0 0.2rem rgba(55, 184, 180, 0.544);
+    color: black;
+}
+
+.form-control:hover {
+    /* background-color: rgba(55, 184, 180, 0.544); */
+    background-color: #5dc7cd72;
+    color: whitesmoke;
+}
+
+.form-control:hover::placeholder {
+    color: whitesmoke;
+}
+
+.btn-push {
+    display: block;
+    position: relative;
+    float: left;
+    width: 120px;
+    padding: 0;
+    margin: 10px 20px 10px 0;
+    font-weight: 600;
+    text-align: center;
+    line-height: 50px;
+    color: #FFF;
+    border-radius: 5px;
+    transition: all 0.2s;
+    background: #5DC8CD;
+    box-shadow: 0px 5px 0px 0px #1E8185;
+}
+
+.btn-push:hover {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    box-shadow: 0px 0px 0px 0px #1E8185;
+}
+
+footer {
+    text-align: center;
+    font-size: 15px;
+    color: #5dc7cd72;
+}
