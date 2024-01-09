@@ -114,6 +114,27 @@ const searchMovie2 = async () => {
     $movieContainer.textContent = "ERROR FETCHING DATA";
   }
 };
+// fetch할 필요 없는 검색 기능 구현
+const searchMovie3 = () => {
+  const $movieCards = document.querySelectorAll(".card");
+  const $searchInput = document.querySelector("#search-input").value.toLowerCase();
+
+  // 빈 문자열이면,
+  if ($searchInput === "") {
+    alert("You haven't entered movie title yet.");
+    return;
+  }
+
+  $movieCards.forEach((card) => {
+    const title = card.querySelector(".title").textContent.toLowerCase();
+
+    if (title.includes($searchInput)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+};
 
 // card 클릭하면 id alert창에 띄우기
 const showId = (id) => {
@@ -146,7 +167,7 @@ const initMovie = async () => {
 
 // 로드가 완료되면 전체 함수 진입
 document.addEventListener("DOMContentLoaded", async function () {
-  // 검색 버튼을 클릭하면 searchMovie나 searchMovie2 수행
+  // 검색 버튼을 클릭하면 searchMovie나 searchMovie2나 searchMovie3 수행
   document.getElementById("search-btn").addEventListener("click", searchMovie2);
 
   // 엔터를 누르면 검색 버튼을 누른것과 동일한 효과를 주자
