@@ -23,7 +23,7 @@ const createCard = (movie, container) => {
   card.className = "card";
 
   // card 클릭하면 id alert창에 띄우기
-  card.addEventListener("click", () => showId(movie.id));
+  // card.addEventListener("click", () => showId(movie.id));
 
   const img = document.createElement("img");
   img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
@@ -47,7 +47,13 @@ const createCard = (movie, container) => {
   card.appendChild(overview);
   card.appendChild(voteAvg);
 
-  container.appendChild(card);
+  //container.appendChild(card);
+  const link = document.createElement("a");
+  link.href = `./movie_detail.html?id=${movie.id}`; // 영화 아이디를 url 파라미터로
+  link.className = "link";
+  link.appendChild(card);
+
+  container.appendChild(link);
 };
 
 // ============================================================ //
@@ -87,7 +93,7 @@ const searchMovie = async () => {
 const searchMovie2 = async () => {
   const $movieContainer = document.querySelector("#movie-container");
   $movieContainer.innerHTML = ""; // 전의 카드들 지우기
-  const $searchInput = document.querySelector("#search-input").value.toLowerCase(); // 대소문자 관계없이 검색 가능하게 하기
+  const $searchInput = document.querySelector("#search-input").value.trim().toLowerCase(); // 대소문자 관계없이 검색 가능하게 하기
 
   // 빈 문자열이면,
   if ($searchInput === "") {
@@ -136,10 +142,10 @@ const searchMovie3 = () => {
   });
 };
 
-// card 클릭하면 id alert창에 띄우기
-const showId = (id) => {
-  alert(`영화 id: ${id}`);
-};
+// // card 클릭하면 id alert창에 띄우기
+// const showId = (id) => {
+//   alert(`영화 id: ${id}`);
+// };
 
 // init 함수 -> 기본 영화들을 불러오기
 const initMovie = async () => {
@@ -168,11 +174,11 @@ const initMovie = async () => {
 // 로드가 완료되면 전체 함수 진입
 document.addEventListener("DOMContentLoaded", async function () {
   // 검색 버튼을 클릭하면 searchMovie나 searchMovie2나 searchMovie3 수행
-  document.getElementById("search-btn").addEventListener("click", searchMovie2);
+  document.getElementById("search-btn").addEventListener("click", searchMovie);
 
   // 엔터를 누르면 검색 버튼을 누른것과 동일한 효과를 주자
   document.getElementById("search-input").addEventListener("keyup", function (event) {
-    if (event.key === "Enter") searchMovie2();
+    if (event.key === "Enter") searchMovie();
   });
 
   await initMovie();

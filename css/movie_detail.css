@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #151515;
+  height: 100vh;
+  width: 100vh;
+  color: whitesmoke;
+  display: inline;
+}
+
+.img-content {
+  height: 50vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #151515);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.else-content {
+  height: 50%;
+  display: flex;
+}
+
+.movie-content {
+  width: 45%;
+  height: 50%;
+  color: whitesmoke;
+}
+
+.card {
+  background-color: #151515;
+  height: 100%;
+  text-align: left;
+  display: flex;
+  margin-left: 10px;
+}
+
+.card > .title {
+  font-size: 60px;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 5px aqua;
+}
+
+.card > .overview {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.card > .voteAvg {
+  text-shadow: 3px 3px 5px aqua;
+  margin-bottom: 20px;
+}
+
+.review-content {
+  height: 50%;
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+
+#review-list {
+  height: 80%;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#review-form {
+  height: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border-radius: 5px;
+  margin-top: 5px;
+  border: 1px solid #5dc8cd; */
+}
+
+.reviewCard {
+  display: flex;
+
+  min-height: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  border: 1px dotted #b7dcde;
+  border-radius: 5px;
+  overflow: overlay;
+}
+
+.reviewCard > p {
+  padding-top: 9px;
+  text-align: left;
+}
+
+.reviewCard > .reviewUserName {
+  flex: 3;
+}
+.reviewCard > .reviewContent {
+  flex: 6;
+}
+
+.btns {
+  flex: 2;
+  display: flex;
+  margin-right: 5px;
+  justify-content: flex-end;
+}
+
+.editBtn {
+  margin-right: 5px;
+}
+
+.btn-push {
+  display: block;
+  align-self: center;
+  position: relative;
+  float: left;
+  width: 120px;
+  height: 45px;
+  padding: 0;
+  margin: 10px 20px 10px 0;
+  font-weight: 600;
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+  border-radius: 5px;
+  transition: all 0.2s;
+  background: #5dc8cd;
+  box-shadow: 0px 5px 0px 0px #1e8185;
+}
+
+.btn-push:hover {
+  margin-top: 15px;
+  margin-bottom: 5px;
+  box-shadow: 0px 0px 0px 0px #1e8185;
+}
+
+#user-info,
+#userReview {
+  margin: 0px 10px 0px 10px;
+}
+
+#user-info > input {
+  height: 20px;
+  width: 100px;
+  margin-bottom: 10px;
+  border-radius: 7px;
+}
+
+#user-info > input:focus {
+  border-color: aqua;
+  box-shadow: 0 0 0 0.2rem rgba(55, 184, 180, 0.544);
+  color: black;
+}
+#user-info > input:hover {
+  background-color: #5dc7cd72;
+  color: whitesmoke;
+}
+#user-info > input:hover::placeholder {
+  color: whitesmoke;
+}
+
+#review-form > textarea {
+  height: 100px;
+  border-radius: 7px;
+}
+#review-form > textarea:focus {
+  border-color: aqua;
+  box-shadow: 0 0 0 0.2rem rgba(55, 184, 180, 0.544);
+  color: black;
+}
+#review-form > textarea:hover {
+  background-color: #5dc7cd72;
+  color: whitesmoke;
+}
+#review-form > textarea:hover::placeholder {
+  color: whitesmoke;
+}
+
+.editBtn,
+.deleteBtn {
+  border-radius: 5px;
+  background-color: #5dc8cd;
+  color: whitesmoke;
+  font-size: 15px;
+}
+
+.logo-content {
+  text-align: right;
+}
+
+.logo-content > i {
+  font-size: 28px;
+  margin: 15px 15px 0 0;
+}

@@ -57,6 +57,7 @@ header > span {
   background-color: black;
   padding: 25px;
   max-width: 250px;
+  min-height: 700px;
   border-radius: 15px;
   display: grid;
   place-items: center;
@@ -127,4 +128,8 @@ footer {
   text-align: center;
   font-size: 15px;
   color: #5dc7cd72;
+}
+
+a {
+  text-decoration-line: none;
 }
