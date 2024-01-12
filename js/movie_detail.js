@@ -158,7 +158,7 @@ const saveReview = (event) => {
     reviewList.push({ userName, userPassword, userReview });
     localStorage.setItem(movieId, JSON.stringify(reviewList));
   }
-
+  alert("Your review's been successfully saved!");
   // 화면 새로고침
   window.location.reload();
 
@@ -172,18 +172,20 @@ const editReview = (idx) => {
   const reviewList = JSON.parse(localStorage.getItem(movieId));
   const review = reviewList[idx];
 
-  const password = prompt("비밀번호를 입력하세요.");
+  const password = prompt("Enter password.");
   if (password !== review.userPassword) {
-    alert("잘못된 비밀번호입니다!!!");
+    alert("Wrong password!!!");
+    return;
   } else {
-    const reviewContent = prompt("리뷰를 수정하세요~~", review.userReview);
+    const reviewContent = prompt("Edit your review~~", review.userReview);
     // 유효성 검사 -> 수정한 내용이 없거나 공백인지 검사
     if (reviewContent !== null && reviewContent.trim() !== "") {
       review.userReview = reviewContent; // update!
       localStorage.setItem(movieId, JSON.stringify(reviewList));
       displayReviewList(); // 업데이트된 리뷰 리스트 보여주기
+      alert("Your review's been successfully edited.");
     } else {
-      alert("잘못된 입력입니다.");
+      alert("wrong input.");
     }
   }
 };
@@ -194,13 +196,15 @@ const deleteReview = (idx) => {
   const reviewList = JSON.parse(localStorage.getItem(movieId));
   const review = reviewList[idx];
 
-  const password = prompt("비밀번호를 입력하세요.");
+  const password = prompt("Enter password.");
   if (password !== review.userPassword) {
-    alert("잘못된 비밀번호입니다!!!");
+    alert("Wrong password!!!");
+    return;
   } else {
     reviewList.splice(idx, 1); // idx부터 1개 요소 자르기
     localStorage.setItem(movieId, JSON.stringify(reviewList));
     displayReviewList();
+    alert("Your review's been successfully deleted.");
   }
 };
 
